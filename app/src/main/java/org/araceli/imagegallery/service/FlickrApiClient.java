@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 
 public class FlickrApiClient {
-    public static final String BASE_URL = "https://api.flickr.com/services/feeds/";
+    private static final String BASE_URL = "https://api.flickr.com/services/feeds/";
 
     public GalleryService getService() {
         return new Retrofit.Builder()

@@ -1,10 +1,13 @@
 
 package org.araceli.imagegallery.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Item {
+public class Item implements Parcelable {
 
     @SerializedName("title")
     @Expose
@@ -105,5 +108,48 @@ public class Item {
     public void setTags(String tags) {
         this.tags = tags;
     }
+
+    protected Item(Parcel in) {
+        title = in.readString();
+        link = in.readString();
+        media = (Media) in.readValue(Media.class.getClassLoader());
+        dateTaken = in.readString();
+        description = in.readString();
+        published = in.readString();
+        author = in.readString();
+        authorId = in.readString();
+        tags = in.readString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(title);
+        dest.writeString(link);
+        dest.writeValue(media);
+        dest.writeString(dateTaken);
+        dest.writeString(description);
+        dest.writeString(published);
+        dest.writeString(author);
+        dest.writeString(authorId);
+        dest.writeString(tags);
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<Item> CREATOR = new Parcelable.Creator<Item>() {
+        @Override
+        public Item createFromParcel(Parcel in) {
+            return new Item(in);
+        }
+
+        @Override
+        public Item[] newArray(int size) {
+            return new Item[size];
+        }
+    };
 
 }

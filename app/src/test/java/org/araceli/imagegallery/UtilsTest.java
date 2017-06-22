@@ -2,7 +2,7 @@ package org.araceli.imagegallery;
 
 import junit.framework.Assert;
 
-import org.araceli.imagegallery.ui.Utils;
+import org.araceli.imagegallery.utils.Utils;
 import org.junit.Test;
 
 public class UtilsTest {

@@ -9,6 +9,7 @@ import com.squareup.picasso.Picasso;
 
 import org.araceli.imagegallery.R;
 import org.araceli.imagegallery.model.Item;
+import org.araceli.imagegallery.utils.Utils;
 
 public class DetailActivity extends AppCompatActivity {
 

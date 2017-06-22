@@ -1,4 +1,4 @@
-package org.araceli.imagegallery.ui;
+package org.araceli.imagegallery.utils;
 
 import android.util.Log;
 

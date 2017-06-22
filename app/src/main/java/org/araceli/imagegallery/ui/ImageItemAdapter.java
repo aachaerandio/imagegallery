@@ -15,6 +15,9 @@ import org.araceli.imagegallery.model.Item;
 
 import java.util.List;
 
+/**
+ * Adapter for images in grid layout gallery
+ */
 public class ImageItemAdapter extends RecyclerView.Adapter<ImageItemAdapter.ViewHolder>{
     private final List<Item> images;
     private final Context context;

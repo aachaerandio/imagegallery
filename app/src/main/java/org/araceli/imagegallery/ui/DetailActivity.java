@@ -14,7 +14,7 @@ public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_DETAIL = "image_id";
     private ImageView imageView;
-    private TextView title, dateTaken, description, published, author, tags;
+    private TextView title, dateTaken, published, author, tags;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class DetailActivity extends AppCompatActivity {
         title.setText(imageItem.getTitle());
         dateTaken.setText(Utils.formatTakenDate(imageItem.getDateTaken()));
         published.setText(Utils.formatPublishedDate(imageItem.getPublished()));
-        author.setText(imageItem.getAuthor());
+        author.setText(Utils.convertAuthor(imageItem.getAuthor()));
         tags.setText(imageItem.getTags());
     }
 }
